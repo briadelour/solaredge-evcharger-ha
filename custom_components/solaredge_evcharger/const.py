@@ -1,6 +1,6 @@
 """Constants for the SolarEdge EV Charger integration."""
 
-DOMAIN = "solaredge_evcharger"
+DOMAIN = "solaredge_evcharger_us"
 PLATFORMS = ["sensor", "binary_sensor", "button"]
 
 # Configuration keys
