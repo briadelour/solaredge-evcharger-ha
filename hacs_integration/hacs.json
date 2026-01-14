@@ -1,0 +1,6 @@
+{
+  "name": "SolarEdge EV Charger",
+  "render_readme": true,
+  "content_in_root": false,
+  "homeassistant": "2023.8.0"
+}

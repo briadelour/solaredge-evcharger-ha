@@ -1,0 +1,56 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "SolarEdge EV Charger Setup",
+        "description": "Configure your SolarEdge EV Charger integration. You'll need your Site ID and browser cookie from the SolarEdge monitoring portal.",
+        "data": {
+          "site_id": "Site ID",
+          "cookie": "Browser Cookie (SPRING_SECURITY_REMEMBER_ME_COOKIE)",
+          "username": "Username (optional, for future use)",
+          "password": "Password (optional, for future use)",
+          "scan_interval": "Scan Interval (seconds)",
+          "timeout": "Request Timeout (seconds)"
+        },
+        "data_description": {
+          "site_id": "Find this in your SolarEdge monitoring URL: .../site/XXXXXXX/...",
+          "cookie": "Extract from browser Developer Tools (F12) → Application/Storage → Cookies",
+          "scan_interval": "How often to update data (minimum 10 seconds)",
+          "timeout": "API request timeout (minimum 10 seconds)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to SolarEdge API. Please check your internet connection.",
+      "invalid_auth": "Invalid authentication. Please check your cookie and try again.",
+      "invalid_site": "Invalid Site ID or no EV Charger found at this site.",
+      "unknown": "Unexpected error occurred. Please check logs for details."
+    },
+    "abort": {
+      "already_configured": "This SolarEdge EV Charger is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "SolarEdge EV Charger Options",
+        "description": "Update your SolarEdge EV Charger configuration. Leave cookie blank to keep existing value.",
+        "data": {
+          "cookie": "Browser Cookie (leave blank to keep current)",
+          "scan_interval": "Scan Interval (seconds)",
+          "timeout": "Request Timeout (seconds)"
+        },
+        "data_description": {
+          "cookie": "Update when your cookie expires (typically every 7-14 days)",
+          "scan_interval": "How often to update data (minimum 10 seconds)",
+          "timeout": "API request timeout (minimum 10 seconds)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to SolarEdge API with the new cookie.",
+      "invalid_auth": "Invalid cookie. Please extract a fresh cookie from your browser.",
+      "unknown": "Unexpected error occurred. Please check logs for details."
+    }
+  }
+}
