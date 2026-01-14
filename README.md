@@ -8,6 +8,10 @@ Monitor and **control** your SolarEdge EV Charger directly in Home Assistant usi
 
 This is a **custom component** that integrates seamlessly with Home Assistant through the UI - no YAML configuration required!
 
+<div align="center">
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/af7c9dbb-fcb7-4aaf-bbae-54fb212385aa" />
+</div>
+
 ## ✨ Features
 
 ### 📊 Comprehensive Monitoring
