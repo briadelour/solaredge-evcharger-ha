@@ -1,6 +1,6 @@
 {
-  "domain": "solaredge",
-  "name": "SolarEdge EV Charger (US)",
+  "domain": "solaredge_evcharger",
+  "name": "SolarEdge EV Charger US",
   "codeowners": ["@briadelour"],
   "config_flow": true,
   "dependencies": [],
