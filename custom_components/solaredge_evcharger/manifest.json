@@ -4,7 +4,7 @@
   "codeowners": ["@briadelour"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/briadelour/solaredge-evcharger-ha",
+  "documentation": "https://github.com/briadelour/solaredge-evcharger-ha#readme",
   "integration_type": "device",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/briadelour/solaredge-evcharger-ha/issues",
