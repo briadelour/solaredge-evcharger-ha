@@ -3,6 +3,7 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 [![Home Assistant](https://img.shields.io/badge/Home%20Assistant-Compatible-blue.svg)](https://www.home-assistant.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/release/briadelour/solaredge-evcharger-ha.svg)](https://github.com/briadelour/solaredge-evcharger-ha/releases)
 
 Monitor and **control** your SolarEdge EV Charger directly in Home Assistant using the private SolarEdge API.
 
