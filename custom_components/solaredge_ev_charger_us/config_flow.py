@@ -166,15 +166,11 @@ class SolarEdgeEVChargerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         config_entry: config_entries.ConfigEntry,
     ) -> SolarEdgeEVChargerOptionsFlow:
         """Get the options flow for this handler."""
-        return SolarEdgeEVChargerOptionsFlow(config_entry)
+        return SolarEdgeEVChargerOptionsFlow()
 
 
 class SolarEdgeEVChargerOptionsFlow(config_entries.OptionsFlow):
     """Handle options flow for SolarEdge EV Charger."""
-
-    def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
-        """Initialize options flow."""
-        self.config_entry = config_entry
 
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
