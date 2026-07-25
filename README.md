@@ -261,6 +261,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Changelog
 
+### v1.2.1 (2026-07-25)
+- BUG FIX: Configuration button not working
+
 ### v1.2.0 (2026-01-15)
 - ✨ **NEW**: Full HACS integration with UI configuration
 - ✨ **NEW**: Update cookies through options menu
