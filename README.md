@@ -45,7 +45,7 @@ This is a **custom component** that integrates seamlessly with Home Assistant th
 
 - Home Assistant 2023.8.0 or newer
 - HACS (Home Assistant Community Store) installed
-- SolarEdge account with EV Charger
+- SolarEdge account with EV Charger (NOTE: this integration was developed and tested with the North American EV Charger model)
 - SolarEdge monitoring portal access
 
 ## 🚀 Installation
