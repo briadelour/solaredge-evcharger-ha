@@ -92,8 +92,7 @@ class EVChargerChargingSensor(SolarEdgeEVChargerBinarySensorBase):
     @property
     def is_on(self) -> bool:
         """Return true if currently charging."""
-        return self.charger_data.get("chargerStatus") == CHARGER_STATUS_CHARGING
-
+        return bool(self.charger_data.get("sessionActive"))
 
 class EVChargeScheduleEnabledSensor(SolarEdgeEVChargerBinarySensorBase):
     """EV Charge Schedule Enabled binary sensor."""
