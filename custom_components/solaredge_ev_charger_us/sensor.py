@@ -134,11 +134,11 @@ class EVChargerPowerSensor(SolarEdgeEVChargerSensorBase):
     @property
     def native_value(self) -> float:
         """Return the power in kW."""
-        if self.charger_data.get("chargerStatus") == CHARGER_STATUS_CHARGING:
+        if self.charger_data.get("sessionActive"):
             subtitles = self.charger_data.get("chargerStatusSubTitle", [])
-            if subtitles and len(subtitles) > 0:
-                numeric_value = subtitles[0].get("numericValue", 0)
-                return round(numeric_value / 1000, 2)
+            for item in subtitles:
+                if item.get("subStatusTitle") == "CURRENT_POWER_WH":
+                    return round(item.get("numericValue", 0) / 1000, 2)
         return 0.0
 
 
