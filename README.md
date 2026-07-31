@@ -261,6 +261,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Changelog
 
+### v1.2.2 (2026-07-31)
+- BUG FIX: More stable reading for active charge session & unconfirmed support for 22kw SolarEdge ONE EV Charger (outside of North America)
+
 ### v1.2.1 (2026-07-25)
 - BUG FIX: Configuration button not working
 
