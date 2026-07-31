@@ -1,6 +1,6 @@
 {
-  "domain": "solaredge_ev_charger_us",
-  "name": "SolarEdge EV Charger US",
+  "domain": "solaredge_ev_charger",
+  "name": "SolarEdge EV Charger",
   "codeowners": ["@briadelour"],
   "config_flow": true,
   "dependencies": [],
@@ -9,5 +9,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/briadelour/solaredge-evcharger-ha/issues",
   "requirements": [],
-  "version": "1.2.2-test"
+  "version": "1.2.2"
 }
