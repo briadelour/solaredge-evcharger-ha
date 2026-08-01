@@ -221,6 +221,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Changelog
 
+### v1.2.4 (2026-08-01)
+- Reverted broken manifest file
+
 ### v1.2.3 (2026-07-31)
 - BUG FIX: Removed manual control buttons as the API call was not working.
 
