@@ -15,7 +15,6 @@ from .const import (
     DOMAIN,
     API_BASE_URL,
     API_DEVICES_ENDPOINT,
-    API_CONTROL_ENDPOINT,
     COOKIE_NAME,
     DEFAULT_SCAN_INTERVAL,
     DEFAULT_TIMEOUT,
@@ -94,55 +93,6 @@ class SolarEdgeEVChargerCoordinator(DataUpdateCoordinator):
                 self.device_id = str(ev_chargers[0].get("reporterId"))
             
             return ev_chargers[0]
-
-    async def async_start_charging(self) -> bool:
-        """Start charging the EV."""
-        return await self._set_charging_state(100)
-
-    async def async_stop_charging(self) -> bool:
-        """Stop charging the EV."""
-        return await self._set_charging_state(0)
-
-    async def _set_charging_state(self, level: int) -> bool:
-        """Set the charging state."""
-        if not self.device_id:
-            _LOGGER.error("Device ID not available")
-            return False
-        
-        url = f"{API_BASE_URL}{API_CONTROL_ENDPOINT.format(site_id=self.site_id, device_id=self.device_id)}"
-        headers = {
-            "Cookie": f"{COOKIE_NAME}={self.cookie}",
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "User-Agent": "Mozilla/5.0",
-        }
-        payload = {
-            "mode": "MANUAL",
-            "level": level,
-            "duration": None,
-        }
-        
-        try:
-            if self._session is None:
-                self._session = aiohttp.ClientSession()
-            
-            async with async_timeout.timeout(self.timeout):
-                async with self._session.put(url, headers=headers, json=payload) as response:
-                    if response.status != 200:
-                        _LOGGER.error("Failed to set charging state: %s", response.status)
-                        return False
-                    
-                    result = await response.json()
-                    if result.get("status") == "PASSED":
-                        # Request immediate refresh
-                        await self.async_request_refresh()
-                        return True
-                    
-                    _LOGGER.error("API returned error: %s", result)
-                    return False
-        except Exception as err:
-            _LOGGER.error("Error setting charging state: %s", err)
-            return False
 
     async def async_shutdown(self) -> None:
         """Close the session."""
