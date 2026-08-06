@@ -221,6 +221,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Changelog
 
+### v1.3.0 (2026-08-06)
+- Removed leftover code from manual controls that are non-functional
+
 ### v1.2.4 (2026-08-01)
 - Reverted broken manifest file
 
