@@ -1,7 +1,7 @@
 """Constants for the SolarEdge EV Charger integration."""
 
 DOMAIN = "solaredge_ev_charger_us"
-PLATFORMS = ["sensor", "binary_sensor"]
+PLATFORMS = ["sensor", "binary_sensor", "button"]
 
 # Configuration keys
 CONF_SITE_ID = "site_id"
@@ -20,6 +20,7 @@ DEFAULT_NAME = "SolarEdge EV Charger"
 # API endpoints
 API_BASE_URL = "https://monitoring.solaredge.com"
 API_DEVICES_ENDPOINT = "/services/api/homeautomation/v1.0/sites/{site_id}/devices"
+API_CONTROL_ENDPOINT = "/services/m/api/homeautomation/v1.0/{site_id}/devices/{device_id}/activationState"
 
 # Cookie name
 COOKIE_NAME = "SPRING_SECURITY_REMEMBER_ME_COOKIE"
@@ -33,6 +34,10 @@ CHARGER_STATUS_NOT_CONNECTED = "NOT_CONNECTED"
 CONNECTION_STATUS_CHARGING = "CHARGING"
 CONNECTION_STATUS_CONNECTED = "CONNECTED"
 CONNECTION_STATUS_DISCONNECTED = "DISCONNECTED"
+
+# Activation modes
+MODE_MANUAL = "MANUAL"
+MODE_AUTO = "AUTO"
 
 # Excess PV values
 EXCESS_PV_ENABLED = -1
@@ -51,6 +56,8 @@ ICON_COG = "mdi:cog"
 ICON_CONNECTION = "mdi:connection"
 ICON_DISTANCE = "mdi:map-marker-distance"
 ICON_SOLAR_PANEL = "mdi:solar-panel"
+ICON_PLAY = "mdi:play-circle"
+ICON_STOP = "mdi:stop-circle"
 
 # Error messages
 ERROR_AUTH_FAILED = "Authentication failed. Please check your credentials."
