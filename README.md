@@ -30,6 +30,11 @@ This is a **custom component** that integrates seamlessly with Home Assistant th
 - See when your next scheduled charge will begin
 - Schedule status integration with dashboard
 
+### 🎮 Manual Control
+- Start and stop charging directly from Home Assistant
+- Smart conditional buttons that only appear when relevant
+- Manual override of schedules and solar charging modes
+
 ### 🔧 Easy Configuration
 - **UI-based setup** - no manual YAML editing!
 - Update expired cookies through the options menu
@@ -149,6 +154,9 @@ No restart required!
 - `binary_sensor.ev_charge_schedule_enabled` - Schedule active?
 - `binary_sensor.ev_excess_solar_enabled` - Solar charging enabled?
 
+### Buttons (2)
+- `button.ev_charger_start_charging` - Start charging manually
+- `button.ev_charger_stop_charging` - Stop charging manually
 
 ## 📱 Dashboard Example
 
@@ -161,6 +169,38 @@ entities:
   - sensor.ev_session_energy
   - sensor.ev_excess_solar_status
   - sensor.ev_charging_schedules
+  
+  # Start button (only when plugged in, not charging)
+  - type: conditional
+    conditions:
+      - entity: binary_sensor.ev_charger_connected
+        state: "on"
+      - entity: binary_sensor.ev_charger_charging
+        state: "off"
+    row:
+      type: button
+      name: Start Charging
+      tap_action:
+        action: call-service
+        service: button.press
+        service_data:
+          entity_id: button.ev_charger_start_charging
+      icon: mdi:play-circle
+  
+  # Stop button (only when charging)
+  - type: conditional
+    conditions:
+      - entity: binary_sensor.ev_charger_charging
+        state: "on"
+    row:
+      type: button
+      name: Stop Charging
+      tap_action:
+        action: call-service
+        service: button.press
+        service_data:
+          entity_id: button.ev_charger_stop_charging
+      icon: mdi:stop-circle
 ```
 
 ## 🔔 Automation Example
@@ -220,6 +260,9 @@ For more detailed information:
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Changelog
+
+### v1.3.1 (2026-08-06)
+- BUG FIX: Restored Start/Stop charging buttons (button platform, control API call, and icons) from the working v1.2.2-test code
 
 ### v1.3.0 (2026-08-06)
 - Removed leftover code from manual controls that are non-functional
