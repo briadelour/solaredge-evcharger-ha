@@ -262,6 +262,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 Changelog
 
+### v1.3.2 (2026-11-14)
+- Updated documentation for clarification in response to issues and fixed readme formatting.
+
 ### v1.3.1 (2026-08-06)
 - BUG FIX: Restored Start/Stop charging buttons (button platform, control API call, and icons) from the working v1.2.2-test code
 
